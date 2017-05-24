@@ -4,15 +4,15 @@ type: guide
 order: 11
 ---
 
-## What are Components?
+## Τι είναι τα Components?
 
-Components are one of the most powerful features of Vue. They help you extend basic HTML elements to encapsulate reusable code. At a high level, components are custom elements that Vue's compiler attaches behavior to. In some cases, they may also appear as a native HTML element extended with the special `is` attribute.
+Τα Components ειναι ενα απο τα πιο ισχυρά χαρακτηριστικά της Vue. Βοηθούν στην επέκταση των στιχείων HTML προκειμένου να αποκτήσουν επαναχρησιμοποιούμενο κώδικα. Σε υψηλό επίπεδο, τα components είναι προσαρμοσμένα στοιχεία οπου ο μεταγλωτιστής της Vue προσθέτει συμπεριφορές. Σε κάποιες περιπτώσεις, μπορεί να εμφανίζονται σαν βασικά στοιχεία HTML με επεκτάσημες ιδιαίτερες `is` ιδιότητες.
 
-## Using Components
+## Χρησιμοποιώντας Components
 
-### Registration
+### Εγγραφή
 
-We've learned in the previous sections that we can create a new Vue instance with:
+Μάθαμε στα προηγούμενα κεφάλαια οτι μπορούμε να δημιουργήσουμε ενα νέο στιγμιότυπο (instance) Vue ως εξής: 
 
 ``` js
 new Vue({
@@ -21,7 +21,7 @@ new Vue({
 })
 ```
 
-To register a global component, you can use `Vue.component(tagName, options)`. For example:
+Για να εγγράψεις ενα global component, μπορεις να χρησιμοποιήσεις `Vue.component(tagName, options)`. Για παράδειγμα:
 
 ``` js
 Vue.component('my-component', {
@@ -29,9 +29,9 @@ Vue.component('my-component', {
 })
 ```
 
-<p class="tip">Note that Vue does not enforce the [W3C rules](http://www.w3.org/TR/custom-elements/#concepts) for custom tag names (all-lowercase, must contain a hyphen) though following this convention is considered good practice.</p>
+<p class="tip">Πρόσεξε οτι η Vue δεν σε υποχρεώνει στους [κανόνες W3C](http://www.w3.org/TR/custom-elements/#concepts) για προσαρμοσμένα ονόματα tag (μικρά γράμματα, πρέπει να περιέχει μια παύλα) αλλα ακολουθώντας αυτήτ τη συμβατότητα θεωρείται καλή πρακτική.</p>
 
-Once registered, a component can be used in an instance's template as a custom element, `<my-component></my-component>`. Make sure the component is registered **before** you instantiate the root Vue instance. Here's the full example:
+Μόλις εγγραφεί, ένα component μπορεί να χρησιμοποιηθεί σε ένα πρότυπο (template) στιγμιοτύπου ως προσαρμοσμένο στοιχείο, `<my-component></my-component>`. Σιγουρέψου οτι το component εχει δηλωθεί **προτού** φτιάξεις στιγμιότυπο της ρίζας (root) Vue. Ακολουθεί όλο το παράδειγμα:
 
 ``` html
 <div id="example">
@@ -51,7 +51,7 @@ new Vue({
 })
 ```
 
-Which will render:
+Το οποίο αποδίδει:
 
 ``` html
 <div id="example">
@@ -71,7 +71,7 @@ new Vue({ el: '#example' })
 </script>
 {% endraw %}
 
-### Local Registration
+### Τοπική εγγραφή
 
 You don't have to register every component globally. You can make a component available only in the scope of another instance/component by registering it with the `components` instance option:
 
